@@ -1,0 +1,462 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Executiva Premium - Aracaju/SE</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#090d16',
+                            800: '#0f172a',
+                            700: '#1e293b'
+                        },
+                        gold: {
+                            400: '#f3d370',
+                            500: '#d4af37',
+                            600: '#aa820a'
+                        }
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #f3d370 0%, #d4af37 50%, #aa820a 100%)',
+                        'dark-gradient': 'radial-gradient(circle at top, #1e293b 0%, #090d16 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+            color: #f8fafc;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gold-border-glow:focus-within {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Styling native date & time picker icons for dark mode */
+        ::-webkit-calendar-picker-indicator {
+            filter: invert(0.8) sepia(100%) saturate(500%) hue-rotate(5deg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-dark-gradient min-h-screen py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-x-hidden">
+
+    <!-- Glowing Background Lights -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-4xl w-full mx-auto relative z-10">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 mb-3">
+                <i class="fa-solid fa-crown text-gold-500 text-xs"></i>
+                <span class="text-[11px] font-semibold text-gold-400 uppercase tracking-widest">Transporte VIP & Executivo</span>
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
+                Reserva de Frota Exclusiva
+            </h1>
+            <p class="text-xs sm:text-sm text-gray-400 max-w-lg mx-auto">
+                Garanta mobilidade de alto padrão em Aracaju e região com motoristas bilíngues e frota regulamentada.
+            </p>
+        </header>
+
+        <!-- Fleet / Cars Showcase Section -->
+        <section class="mb-10">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-white uppercase tracking-wider">
+                        <i class="fa-solid fa-car-rear text-gold-500 mr-2"></i>Nossa Frota
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-0.5">Veículos novos, revisados e higienizados a cada serviço</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div id="fleet-filters" class="flex flex-wrap gap-1.5">
+                    <button onclick="filterFleet('all')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gold-gradient text-dark-900 filter-btn">Todos</button>
+                    <button onclick="filterFleet('sedan')" class="px-3 py-1.5 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white filter-btn">Sedan</button>
+                    <button onclick="filterFleet('suv')" class="px-3 py-1.5 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white filter-btn">SUV</button>
+                    <button onclick="filterFleet('van')" class="px-3 py-1.5 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white filter-btn">Van</button>
+                    <button onclick="filterFleet('armored')" class="px-3 py-1.5 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white filter-btn">Blindados</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Car Card 1: Executive Sedan -->
+                <div class="fleet-item sedan glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/40 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-36 bg-dark-900 overflow-hidden flex items-center justify-center p-4">
+                            <img src="https://placehold.co/400x250/1e293b/d4af37?text=Sedan+Executivo+(Toyota+Corolla)" alt="Sedan Executivo" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x250/1e293b/d4af37?text=Sedan+Executivo';">
+                            <span class="absolute top-2 right-2 bg-dark-900/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-2 py-0.5 rounded border border-gold-500/30">Executive</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-sm font-bold text-white mb-1">Toyota Corolla / Corolla Cross</h3>
+                            <p class="text-[11px] text-gray-400 mb-3">Conforto absoluto, bancos de couro e ar dual zone.</p>
+                            <div class="grid grid-cols-2 gap-2 text-[10px] text-gray-300 mb-2">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-user-group text-gold-500"></i> Até 3 pass.</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase text-gold-500"></i> 3 Malas</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-wifi text-gold-500"></i> Wi-Fi a bordo</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-bottle-water text-gold-500"></i> Água cortesia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="selectCarInForm('Executive Sedan')" class="w-full py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-dark-900 font-bold text-xs uppercase transition-all">
+                            Reservar Sedan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Card 2: SUV Premium -->
+                <div class="fleet-item suv glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/40 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-36 bg-dark-900 overflow-hidden flex items-center justify-center p-4">
+                            <img src="https://placehold.co/400x250/1e293b/d4af37?text=SUV+Premium+(Jeep+Compass)" alt="SUV Premium" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x250/1e293b/d4af37?text=SUV+Premium';">
+                            <span class="absolute top-2 right-2 bg-dark-900/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-2 py-0.5 rounded border border-gold-500/30">SUV</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-sm font-bold text-white mb-1">Jeep Compass / SW4</h3>
+                            <p class="text-[11px] text-gray-400 mb-3">Imponência, tração 4x4 e espaço amplo para bagagens.</p>
+                            <div class="grid grid-cols-2 gap-2 text-[10px] text-gray-300 mb-2">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-user-group text-gold-500"></i> Até 4 pass.</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase text-gold-500"></i> 4 Malas G</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-plug text-gold-500"></i> Carregador</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-bottle-water text-gold-500"></i> Kit Refris</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="selectCarInForm('Premium SUV')" class="w-full py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-dark-900 font-bold text-xs uppercase transition-all">
+                            Reservar SUV
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Card 3: VIP Van -->
+                <div class="fleet-item van glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/40 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-36 bg-dark-900 overflow-hidden flex items-center justify-center p-4">
+                            <img src="https://placehold.co/400x250/1e293b/d4af37?text=Van+VIP+(Mercedes+Sprinter)" alt="Van VIP" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x250/1e293b/d4af37?text=Van+VIP';">
+                            <span class="absolute top-2 right-2 bg-dark-900/80 backdrop-blur-md text-gold-400 text-[10px] font-bold px-2 py-0.5 rounded border border-gold-500/30">Grupos</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-sm font-bold text-white mb-1">Mercedes-Benz Sprinter Executive</h3>
+                            <p class="text-[11px] text-gray-400 mb-3">Bancos de couro reclináveis e TV/som para delegações.</p>
+                            <div class="grid grid-cols-2 gap-2 text-[10px] text-gray-300 mb-2">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-user-group text-gold-500"></i> Até 15 pass.</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-suitcase text-gold-500"></i> Porta-malas G</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-tv text-gold-500"></i> Monitor TV</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-snowflake text-gold-500"></i> Ar de alta pot.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="selectCarInForm('VIP Van')" class="w-full py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-dark-900 font-bold text-xs uppercase transition-all">
+                            Reservar Van
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Card 4: Armored Sedan -->
+                <div class="fleet-item armored glass-card rounded-2xl overflow-hidden border border-gold-500/30 hover:border-gold-500 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-36 bg-dark-900 overflow-hidden flex items-center justify-center p-4">
+                            <img src="https://placehold.co/400x250/1e293b/d4af37?text=Blindado+Executive+(Nivel+III-A)" alt="Blindado Executive" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x250/1e293b/d4af37?text=Blindado';">
+                            <span class="absolute top-2 right-2 bg-gold-gradient text-dark-900 text-[9px] font-extrabold uppercase px-2 py-0.5 rounded">Blindado III-A</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-sm font-bold text-white mb-1">Toyota Camry / Blindado III-A</h3>
+                            <p class="text-[11px] text-gray-400 mb-3">Segurança balística certificada e discrição total.</p>
+                            <div class="grid grid-cols-2 gap-2 text-[10px] text-gray-300 mb-2">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-shield text-gold-500"></i> Nível III-A</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-user-shield text-gold-500"></i> Motorista tático</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-gold-500"></i> Vidros 21mm</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-user-group text-gold-500"></i> Até 3 pass.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button onclick="selectCarInForm('Armored Sedan')" class="w-full py-2 rounded-lg bg-gold-gradient text-dark-900 font-bold text-xs uppercase transition-all shadow-md">
+                            Reservar Blindado
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Cards Section -->
+        <section class="mb-10">
+            <div class="mb-6">
+                <h2 class="text-xl sm:text-2xl font-bold text-white uppercase tracking-wider">
+                    <i class="fa-solid fa-tags text-gold-500 mr-2"></i>Tabela Exemplo de Valores
+                </h2>
+                <p class="text-xs text-gray-400 mt-0.5">Estimativas de tarifário para as rotas mais solicitadas em Sergipe</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="glass-card p-5 rounded-2xl border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Transfer Aeroporto</span>
+                            <span class="text-[10px] bg-gold-500/20 text-gold-400 px-2 py-0.5 rounded font-mono">Aeroporto ➔ Atalaia</span>
+                        </div>
+                        <p class="text-2xl font-extrabold text-white mb-1">R$ 120 <span class="text-xs font-normal text-gray-400">/ trajeto</span></p>
+                        <p class="text-[11px] text-gray-400 mb-4">Recepção com placa nominativa no desembarque e auxílio com bagagens.</p>
+                    </div>
+                    <button onclick="applyPreset('Aeroporto AJU', 'Orla da Atalaia', 'Transfer Executivo')" class="w-full py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-dark-900 font-bold text-xs uppercase transition-all">
+                        Selecionar esta Rota
+                    </button>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl border border-gold-500/30 hover:border-gold-500 transition-all flex flex-col justify-between relative overflow-hidden">
+                    <span class="absolute -right-7 top-3 bg-gold-gradient text-dark-900 text-[9px] font-extrabold uppercase py-0.5 px-8 rotate-45">Mais Pedido</span>
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Diária à Disposição</span>
+                            <span class="text-[10px] bg-gold-500/20 text-gold-400 px-2 py-0.5 rounded font-mono">8 Horas de Serviço</span>
+                        </div>
+                        <p class="text-2xl font-extrabold text-white mb-1">R$ 650 <span class="text-xs font-normal text-gray-400">/ diária</span></p>
+                        <p class="text-[11px] text-gray-400 mb-4">Motorista à sua inteira disposição em Aracaju com combustível incluso (até 100km).</p>
+                    </div>
+                    <button onclick="applyPreset('Hotel na Atalaia', 'Itinerário Livre / Aracaju', 'Diária (8h à disposição)')" class="w-full py-2 rounded-lg bg-gold-gradient text-dark-900 font-bold text-xs uppercase transition-all shadow-md">
+                        Selecionar Diária
+                    </button>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl border border-white/10 hover:border-gold-500/40 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Turismo Xingó</span>
+                            <span class="text-[10px] bg-gold-500/20 text-gold-400 px-2 py-0.5 rounded font-mono">Canindé de São Francisco</span>
+                        </div>
+                        <p class="text-2xl font-extrabold text-white mb-1">R$ 890 <span class="text-xs font-normal text-gray-400">/ bate-volta</span></p>
+                        <p class="text-[11px] text-gray-400 mb-4">Viagem privativa para os Cânions do São Francisco com total conforto e agendamento flexível.</p>
+                    </div>
+                    <button onclick="applyPreset('Aracaju (Hotel)', 'Cânions do Xingó (Canindé)', 'Viagem Intermunicipal')" class="w-full py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-dark-900 font-bold text-xs uppercase transition-all">
+                        Selecionar Rota Xingó
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Driver Application Section (Área para Motoristas Parceiros) -->
+        <section class="mb-10">
+            <div class="glass-card p-6 md:p-8 rounded-2xl border border-gold-500/30 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-16 -top-16 w-40 h-40 bg-gold-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-6 mb-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 mb-2">
+                            <i class="fa-solid fa-id-card text-gold-500 text-xs"></i>
+                            <span class="text-[10px] font-bold text-gold-400 uppercase tracking-widest">Trabalhe Conosco</span>
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white uppercase tracking-wider">
+                            Seja um Motorista Parceiro Executive
+                        </h2>
+                        <p class="text-xs text-gray-400 mt-1 max-w-xl">
+                            Possui veículo próprio novo ou seminovo em Sergipe? Cadastre-se para prestar serviços de alto padrão para executivos, turismos e eventos VIP.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <span class="text-xs text-gold-400 font-semibold bg-gold-500/10 px-3 py-2 rounded-xl border border-gold-500/20 inline-block text-center">
+                            <i class="fa-solid fa-handshake mr-1"></i> Ganhos Competitivos & Agenda Flexível
+                        </span>
+                    </div>
+                </div>
+
+                <form id="driver-form" onsubmit="event.preventDefault(); submitDriverApplication();" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">Nome Completo</label>
+                            <input type="text" id="driver-name" placeholder="Ex: Carlos Oliveira" class="w-full px-4 py-2.5 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">Telefone / WhatsApp</label>
+                            <input type="tel" id="driver-phone" placeholder="(79) 99999-9999" class="w-full px-4 py-2.5 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">E-mail Profissional</label>
+                            <input type="email" id="driver-email" placeholder="carlos@email.com" class="w-full px-4 py-2.5 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">Modelo e Ano do Veículo</label>
+                            <input type="text" id="driver-vehicle" placeholder="Ex: Corolla 2023 / Compass 2024" class="w-full px-4 py-2.5 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">Categoria do Veículo</label>
+                            <select id="driver-category" class="w-full px-4 py-2.5 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500" required>
+                                <option value="Sedan Executivo">Sedan Executivo</option>
+                                <option value="SUV Premium">SUV Premium</option>
+                                <option value="Van VIP">Van VIP / Minivan</option>
+                                <option value="Veículo Blindado">Veículo Blindado (Nível III-A)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">CNH com EAR / Regulamentação</label>
+                            <select id="driver-ear" class="w-full px-4 py-2.5 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500" required>
+                                <option value="Sim">Possuo CNH com EAR (Exercício de Atividade Remunerada)</option>
+                                <option value="Em Processo">Em processo de regularização</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-400 text-xs mb-1">Experiência prévia / Observações</label>
+                        <textarea id="driver-notes" rows="2" placeholder="Conte brevemente sobre sua experiência com transporte executivo ou turismo em Sergipe..." class="w-full px-4 py-2.5 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-500"></textarea>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <span class="text-[11px] text-gray-400 flex items-center gap-1.5">
+                            <i class="fa-solid fa-lock text-gold-500"></i> Seus dados estão seguros e serão avaliados por nossa equipe comercial.
+                        </span>
+                        <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gold-gradient text-dark-900 font-bold text-xs uppercase tracking-wider hover:opacity-95 transition-opacity shadow-lg shadow-gold-500/20">
+                            Enviar Cadastro de Motorista
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Main Reservation Form Container -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border border-white/10 shadow-2xl">
+<!-- ... existing code -->
+    <!-- JavaScript Logic -->
+    <script>
+        // Set default date picker to today
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('full-date');
+            if (dateInput) dateInput.value = today;
+            updateLivePreview();
+        });
+
+        // Live Preview Logic
+        function updateLivePreview() {
+            const vehicle = document.querySelector('input[name="vehicle_type"]:checked')?.value || 'Executive Sedan';
+            const modality = document.querySelector('input[name="service_type"]:checked')?.value || 'Transfer Executivo';
+            const origin = document.getElementById('full-origin')?.value || 'Origem';
+            const destination = document.getElementById('full-destination')?.value || 'Destino';
+            const dateVal = document.getElementById('full-date')?.value || '';
+            const timeVal = document.getElementById('full-time')?.value || '08:00';
+
+            // Price estimation logic
+            const basePrices = {
+                'Executive Sedan': { 'Transfer Executivo': 120, 'Diária (8h à disposição)': 650, 'Viagem Intermunicipal': 890 },
+                'Premium SUV': { 'Transfer Executivo': 220, 'Diária (8h à disposição)': 980, 'Viagem Intermunicipal': 1250 },
+                'VIP Van': { 'Transfer Executivo': 350, 'Diária (8h à disposição)': 1400, 'Viagem Intermunicipal': 1800 },
+                'Armored Sedan': { 'Transfer Executivo': 450, 'Diária (8h à disposição)': 2200, 'Viagem Intermunicipal': 2800 }
+            };
+
+            const estimatedPrice = basePrices[vehicle]?.[modality] || 120;
+
+            let formattedDate = '--/--/----';
+            if (dateVal) {
+                const parts = dateVal.split('-');
+                if (parts.length === 3) formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
+            }
+
+            document.getElementById('prev-vehicle').innerText = vehicle;
+            document.getElementById('prev-modal').innerText = modality;
+            document.getElementById('prev-route').innerText = `${origin} → ${destination}`;
+            document.getElementById('prev-datetime').innerText = `${formattedDate} às ${timeVal}`;
+            document.getElementById('prev-price').innerText = `R$ ${estimatedPrice},00`;
+        }
+
+        // Filter Fleet Gallery
+        function filterFleet(category) {
+            const items = document.querySelectorAll('.fleet-item');
+            const buttons = document.querySelectorAll('#fleet-filters button');
+
+            buttons.forEach(btn => {
+                btn.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white filter-btn';
+            });
+
+            if (event && event.currentTarget) {
+                event.currentTarget.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-gold-gradient text-dark-900 filter-btn';
+            }
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Auto Select Car in Reservation Form
+        function selectCarInForm(carValue) {
+            const radios = document.getElementsByName('vehicle_type');
+            radios.forEach(radio => {
+                if (radio.value === carValue) radio.checked = true;
+            });
+            updateLivePreview();
+            document.getElementById('full-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Apply Preset values from pricing cards
+        function applyPreset(origin, destination, modality) {
+            document.getElementById('full-origin').value = origin;
+            document.getElementById('full-destination').value = destination;
+            
+            const modalityRadios = document.getElementsByName('service_type');
+            modalityRadios.forEach(radio => {
+                if (radio.value === modality) radio.checked = true;
+            });
+
+            updateLivePreview();
+            document.getElementById('full-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form Submission Notification
+        function submitFullReservation() {
+            showToast("Sua solicitação foi gravada com sucesso! Em breve entraremos em contato.");
+        }
+
+        // Driver Application Submission
+        function submitDriverApplication() {
+            const driverName = document.getElementById('driver-name').value;
+            showToast(`Obrigado, ${driverName}! Seu cadastro de motorista parceiro foi enviado com sucesso para análise.`);
+            document.getElementById('driver-form').reset();
+        }
+
+        // Notification Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toast-modal');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = msg;
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
+```
